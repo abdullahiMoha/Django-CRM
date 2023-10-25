@@ -7,11 +7,11 @@ from django import forms
 class SignUpForm(UserCreationForm):
     """Signing Up New use Class"""
     email = forms.EmailField(label="", widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholde': 'Email Address'}))
-    first_name = forms.CharField(label="", max_length=50, widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholde': 'First Name'}))
-    last_name = forms.CharField(label="", max_length=50, widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholde': 'Last Name'}))
+        attrs={'class': 'form-control', 'placeholder': 'Email Address'}))
+    first_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'First Name'}))
+    last_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Last Name'}))
 
     class Meta:
         """Meta class for fields"""
