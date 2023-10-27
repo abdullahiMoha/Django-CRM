@@ -20,10 +20,10 @@
 </div>
 <br />
 <a href="{% url 'home' %}" class="btn btn-secondary">Back to List</a>
-<a href="{% url 'delete_record' user_record.id %}" class="btn btn-danger"
-  >Delete</a
->
 <a href="{% url 'update_record' user_record.id %}" class="btn btn-success"
   >Update</a
+>
+<a href="{% url 'delete_record' user_record.id %}" class="btn btn-danger"
+  >Delete</a
 >
 {% endblock %}

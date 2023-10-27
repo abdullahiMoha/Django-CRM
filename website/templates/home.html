@@ -30,27 +30,66 @@
 </table>
 {% else %}
 <div class="col-md-6 offset-md-3">
-  <h2>Login</h2>
-  <form method="POST" action="{% url 'home' %}">
-    {% csrf_token %}
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        name="username"
-        placeholder="Username"
-      />
+  <br />
+  <div class="position-relative m-4">
+    <div
+      class="position-relative py-2 px-4 text-bg-success border border-success rounded-pill"
+    >
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        class="position-absolute top-100 start-50 translate-middle"
+        fill="var(--bs-success)"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+        />
+      </svg>
     </div>
-    <div class="mb-3">
-      <input
-        type="password"
-        class="form-control"
-        name="password"
-        placeholder="Password"
-      />
+    <h1 class="display-3 text-center">Cagta Pro</h1>
+    <div
+      class="position-relative py-2 px-4 text-bg-success border border-success rounded-pill"
+    >
+      <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 16 16"
+        class="position-absolute top-100 start-50 translate-middle display-5 h2"
+        fill="var(--bs-success)"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+        />
+      </svg>
     </div>
-    <button type="submit" class="btn btn-secondary">Login</button>
-  </form>
-</div>
-{% endif %} {% endblock %}
+    <br />
+    <br />
+    <h2>Login</h2>
+    <br />
+    <form method="POST" action="{% url 'home' %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          name="username"
+          placeholder="Username"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Password"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+  {% endif %} {% endblock %}
 </div>
