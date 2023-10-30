@@ -12,6 +12,7 @@ def home(request):
     # Get all of the Record objects
     # pylint: disable=E1101
     records = Record.objects.all()
+    # Display the number of records in the table cell.}
     # check if the user is logged in
     if request.method == 'POST':
         # do something
@@ -28,6 +29,15 @@ def home(request):
             return redirect('home')
     else:
         return render(request, 'home.html', {'records': records})
+
+
+def count_users(request):
+    """ home page view"""
+    # Get all of the Record objects
+    # pylint: disable=E1101
+    records = Record.objects.all()
+    records.count()
+    return render(request, 'navbar.html', {'records': records})
 
 
 def logout_user(request):
@@ -84,6 +94,7 @@ def delete_record(request, pk):
 
 def add_record(request):
     """adding new record function"""
+    count_users(None)
     form = AddRecordForm(request.POST or None)
     if request.user.is_authenticated:
         if request.method == "POST":
