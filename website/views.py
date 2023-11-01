@@ -16,6 +16,14 @@ def home(request):
     # check if the user is logged in
     if request.method == 'POST':
         # do something
+        return redirect('login')
+    else:
+        return render(request, 'home.html', {'records': records})
+
+
+def login_user(request):
+    """login method"""
+    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         # authenticate
@@ -26,9 +34,9 @@ def home(request):
             return redirect('home')
         else:
             messages.success(request, "There was an error logged in")
-            return redirect('home')
+            return redirect('login')
     else:
-        return render(request, 'home.html', {'records': records})
+        return render(request, 'authenticate/login.html')
 
 
 def count_users(request):
